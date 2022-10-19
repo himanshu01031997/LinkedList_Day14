@@ -36,7 +36,7 @@ namespace LinkedList
                 Console.WriteLine("linked list is empty");
                 return;
             }
-            while(temp.next != null)
+            while(temp != null)
             {
                 Console.WriteLine(temp.data+ " ");
                 temp = temp.next;
