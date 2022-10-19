@@ -28,6 +28,21 @@ namespace LinkedList
             Console.WriteLine("{0} inserted into linked list",node.data);
 
         }
+        public void AddInReverseOrder(int data)            // To Display Add Elements In Reverse Order
+        {
+            Node newNode = new Node(data);
+            if (this.head == null)
+            {
+                this.head = newNode;
+            }
+            else
+            {
+                Node temp = this.head;
+                head = newNode;
+                head.next = temp;
+            }
+            Console.WriteLine("{0} inserted into linked list  ",newNode.data);
+        }
         public void Display()
         {
             Node temp = this.head;
@@ -36,7 +51,7 @@ namespace LinkedList
                 Console.WriteLine("linked list is empty");
                 return;
             }
-            while(temp.next != null)
+            while(temp != null)
             {
                 Console.WriteLine(temp.data+ " ");
                 temp = temp.next;
