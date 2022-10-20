@@ -138,7 +138,7 @@ namespace LinkedList
             Node temp = this.head;
             if (temp == null)
             {
-                Console.WriteLine("linked list is empty");
+                Console.WriteLine("linked list Is empty");
                 return;
             }
             while (temp != null)
