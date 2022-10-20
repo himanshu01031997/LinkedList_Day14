@@ -102,6 +102,19 @@ namespace LinkedList
                
             }
         }
+        public Node Pop()                                   // Pop Method - To Delete First number 
+        {
+            Node node = head;
+            if (head == null)
+            {
+                Console.WriteLine("Linked List is Empty");
+            }
+            else
+            {
+                head = head.next;
+            }
+            return node;
+        }
         public void Display()
         {
             Node temp = this.head;

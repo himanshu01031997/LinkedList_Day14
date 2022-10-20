@@ -4,7 +4,7 @@
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("please enter your choice: \n1.add number \n2.add number reverse order\n3.insert no\n4.Append\n");
+            Console.WriteLine("please enter your choice: \n1.add number \n2.add number reverse order\n3.insert no\n4.Append\n5.Delete First no\n");
             int choice = Convert.ToInt32(Console.ReadLine());
             switch (choice)
             {
@@ -27,7 +27,7 @@
                     LinkedList linkedList2 = new LinkedList();
                     linkedList2.Add(56);
                     linkedList2.Add(70);
-                    linkedList2.InsertNode(2, 30);
+                    linkedList2.InsertNode(2, 12);
                     linkedList2.Display();
                     break;
                 case 4:
@@ -36,6 +36,14 @@
                     linkedList3.Append(30);
                     linkedList3.Append(70);
                     linkedList3.Display();
+                    break;
+                case 5:
+                    LinkedList linkedList4 = new LinkedList();
+                    linkedList4.Add(56);
+                    linkedList4.Add(30);
+                    linkedList4.Add(70);
+                    linkedList4.Pop();
+                    linkedList4.Display();
                     break;
 
             }
