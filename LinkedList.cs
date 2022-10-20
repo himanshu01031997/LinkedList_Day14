@@ -57,5 +57,35 @@ namespace LinkedList
                 temp = temp.next;
             }
         }
+        public void InsertNode(int position ,int data)
+        {
+            if (position < 1)
+            {
+                Console.WriteLine("invalid data");
+            }
+            if (position == 1)
+            {
+                var newnode= new Node(data);
+                newnode.next = this.head;
+                head= newnode;
+            }
+            else
+            {
+                while(position -- != 0)
+                {
+                    if(position == 1)
+                    {
+                        Node node1 = new Node(data);
+                        node1.next = this.head.next;
+                        head.next = node1;
+                        break;
+                    }
+                    head= head.next;
+                }
+                if(position != 1)
+                    Console.WriteLine("position out of range");
+               
+            }
+        }
     }
 }
