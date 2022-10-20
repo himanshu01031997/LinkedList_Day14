@@ -43,48 +43,70 @@ namespace LinkedList
             }
             Console.WriteLine("{0} inserted into linked list  ",newNode.data);
         }
-        public void Display()
+        public int Search(int value)
         {
-            Node temp = this.head;
-            if(temp == null)
+            Node node = this.head;
+            int count = 0;
+            while(node!= null)
             {
-                Console.WriteLine("linked list is empty");
-                return;
+                if (node.data == value)
+                    return count;
+                node=node.next;
+                count++;
             }
-            while(temp != null)
-            {
-                Console.WriteLine(temp.data+ " ");
-                temp = temp.next;
-            }
+            return count;
         }
         public void InsertNode(int position ,int data)
         {
+            var newnode = new Node(data);
+            //newnode.next = this.head;
+            //head = newnode;
+            newnode.data = data;
+            newnode.next = this.head;
             if (position < 1)
             {
                 Console.WriteLine("invalid data");
             }
             if (position == 1)
             {
-                var newnode= new Node(data);
-                newnode.next = this.head;
-                head= newnode;
+               newnode.next = this.head;
+                head = newnode;
             }
             else
             {
-                while(position -- != 0)
+                Node node1 = new Node(data);
+                node1= this.head;
+                
+                while (position>2)
                 {
-                    if(position == 1)
-                    {
-                        Node node1 = new Node(data);
-                        node1.next = this.head.next;
-                        head.next = node1;
-                        break;
-                    }
-                    head= head.next;
+                    //if(position == 1)
+                    //{
+                    //    Node node1 = new Node(data);
+                    //   
+                    //    break;
+                    //}
+                    node1= node1.next;
+                    position--;
                 }
-                if(position != 1)
-                    Console.WriteLine("position out of range");
+                //if(position != 1)
+                //    Console.WriteLine("position out of range");
+                newnode.next = node1.next;
+                node1.next = newnode;
                
+            }
+        }
+        public void Display()
+        {
+            Node temp = this.head;
+            if (temp == null)
+            {
+                Console.WriteLine("linked list is empty");
+                return;
+            }
+            while (temp != null)
+            {
+                Console.WriteLine(temp.data + " ");
+                temp = temp.next;
             }
         }
     }

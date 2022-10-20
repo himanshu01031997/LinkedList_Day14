@@ -25,7 +25,15 @@
                     break;
                 case 3:
                     LinkedList linkedList2 = new LinkedList();
+                    //int a=  linkedList2.Search(70);
+                    //Console.WriteLine("index position of 70 is"+a);
+                    // linkedList2.InsertNode(2, 67);
+                    linkedList2.Add(56);
+                    linkedList2.Add(70);
                     linkedList2.InsertNode(2, 30);
+                    linkedList2.Display();
+
+
                     break;
 
             }
