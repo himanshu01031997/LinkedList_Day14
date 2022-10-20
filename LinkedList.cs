@@ -56,11 +56,26 @@ namespace LinkedList
             }
             return count;
         }
+        public void Append(int data)
+        {
+            Node node = new Node(data);
+            if (head == null)
+            {
+                head = node;
+            }
+            else
+            {
+                Node temp = head;
+                while (temp.next != null)
+                {
+                    temp = temp.next;
+                }
+                temp.next = node;
+            }
+        }
         public void InsertNode(int position ,int data)
         {
             var newnode = new Node(data);
-            //newnode.next = this.head;
-            //head = newnode;
             newnode.data = data;
             newnode.next = this.head;
             if (position < 1)
@@ -79,17 +94,9 @@ namespace LinkedList
                 
                 while (position>2)
                 {
-                    //if(position == 1)
-                    //{
-                    //    Node node1 = new Node(data);
-                    //   
-                    //    break;
-                    //}
                     node1= node1.next;
                     position--;
                 }
-                //if(position != 1)
-                //    Console.WriteLine("position out of range");
                 newnode.next = node1.next;
                 node1.next = newnode;
                
