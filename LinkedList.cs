@@ -115,6 +115,24 @@ namespace LinkedList
             }
             return node;
         }
+        public Node PopLast()                               // PopLast Method - To Delete Last Element in Linked List 
+        {
+            if (head == null)
+            {
+                Console.WriteLine("Linked List is Empty");
+                return null;
+            }
+            else
+            {
+                Node n = head;
+                while (n.next.next != null)
+                {
+                    n = n.next;
+                }
+                n.next = null;
+                return n;
+            }
+        }
         public void Display()
         {
             Node temp = this.head;
